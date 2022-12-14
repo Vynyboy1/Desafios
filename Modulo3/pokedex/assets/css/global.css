@@ -60,10 +60,12 @@ body {
   color: white;
   padding: 0.25rem 0.5rem;
   border-radius: 1rem;
+  min-width: 46.5px;
+  text-align: center;
 }
 @media only screen and (max-width: 1400px) {
   .content {
-    /* max-width: 992px; */
+    max-width: 992px;
     margin: 0 auto;
   }
   .pokemons {
@@ -73,24 +75,25 @@ body {
 
 @media only screen and (max-width: 900px) {
   .content {
-    max-width: 768px;
+    max-width: 631px;
     margin: 0 auto;
   }
   .pokemons {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-@media only screen and (max-width: 505px) {
+@media only screen and (max-width: 600px) {
   .content {
-    max-width: 395px;
+    max-width: 443px;
     margin: 0 auto;
   }
   .pokemons {
     grid-template-columns: 1fr 1fr;
   }
 }
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 405px) {
   .content {
+    max-width: 255px;
     margin: 0 auto;
   }
   .pokemons {
