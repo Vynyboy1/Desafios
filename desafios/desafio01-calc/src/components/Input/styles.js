@@ -13,11 +13,12 @@ export const InputContainer = styled.div`
   font-family: "Roboto";
 
   input {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     min-height: 75px;
     background-color: #aaffaa;
     border: 0;
-    align: right;
     padding: 0 20px;
     font-size: 24px;
     font-family: "Roboto";

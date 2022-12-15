@@ -8,3 +8,4 @@ const Input = ({ value }) => {
 };
 
 export default Input;
+ 

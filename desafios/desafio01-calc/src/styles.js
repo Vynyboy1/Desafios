@@ -11,9 +11,11 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  display: flex
+  // display: flex;
+  // align-items: center;
   background-color: #fff;
   width: 50%;
+  min-height: 350px;
 `;
 
 export const Rowjs = styled.div`
