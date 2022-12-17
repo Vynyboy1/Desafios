@@ -1,33 +1,34 @@
 import Input from "./components/Input";
 import Button from "./components/Button";
 import { Container, Content, Rowjs, Columnjs } from "./styles";
-import { Component, useState } from "react";
+import { useState } from "react";
+import { Component } from "react";
 
 const App = () => {
   const [currentNumber, setCurrentNumber] = useState("0");
   const [firsNumber, setfirstNumber] = useState("0");
-  const [operation, setoperation] = useState('')
+  const [operation, setoperation] = useState("");
 
   const handleClear = () => {
     setCurrentNumber("0");
-    setfirstNumber('0');
-    setoperation('')
+    setfirstNumber("0");
+    setoperation("");
   };
 
   const handleAddNumber = (num) => {
-    setCurrentNumber((prev) => `${prev === "0"?"":prev}${num}`);
+    setCurrentNumber((prev) => `${prev === "0" ? "" : prev}${num}`);
   };
 
   const handleSumNumbers = () => {
     if (firsNumber === "0") {
       setfirstNumber(currentNumber);
       setCurrentNumber("0");
-      setoperation('+');
+      setoperation("+");
     } else {
       let sum = Number(firsNumber) + Number(currentNumber);
       setCurrentNumber(String(sum));
       setfirstNumber("0");
-      setoperation('+');
+      setoperation("+");
     }
   };
 
@@ -35,12 +36,12 @@ const App = () => {
     if (firsNumber === "0") {
       setfirstNumber(currentNumber);
       setCurrentNumber("0");
-      setoperation('-');
+      setoperation("-");
     } else {
       let rem = Number(firsNumber) - Number(currentNumber);
       setCurrentNumber(String(rem));
       setfirstNumber("0");
-      setoperation('-');
+      setoperation("-");
     }
   };
 
@@ -48,12 +49,12 @@ const App = () => {
     if (firsNumber === "0") {
       setfirstNumber(currentNumber);
       setCurrentNumber("0");
-      setoperation('*');
+      setoperation("*");
     } else {
       let mult = Number(firsNumber) * Number(currentNumber);
       setCurrentNumber(String(mult));
       setfirstNumber("0");
-      setoperation('*');
+      setoperation("*");
     }
   };
 
@@ -61,37 +62,35 @@ const App = () => {
     if (firsNumber === "0") {
       setfirstNumber(currentNumber);
       setCurrentNumber("0");
-      setoperation('/');
+      setoperation("/");
     } else {
       let mult = Number(firsNumber) / Number(currentNumber);
       setCurrentNumber(String(mult));
       setfirstNumber("0");
-      setoperation('/');
+      setoperation("/");
     }
   };
 
   const handleEquals = () => {
-    if (firsNumber !== "0" && operation !== "" && currentNumber !== '0') {
-      switch(operation){
-        case '+' :
+    if (firsNumber !== "0" && operation !== "" && currentNumber !== "0") {
+      switch (operation) {
+        case "+":
           handleSumNumbers();
           break;
-          case '-' :
-            handleRemumbers();
-            break;
-          case '*' :
-            handlemultumbers();
-            break;
-          case '/' :
-            handledivNumbers();
-            break;
-
-          default:
+        case "-":
+          handleRemumbers();
           break;
-         
+        case "*":
+          handlemultumbers();
+          break;
+        case "/":
+          handledivNumbers();
+          break;
 
+        default:
+          break;
       }
-    } 
+    }
   };
 
   return (
