@@ -5,7 +5,7 @@ from sqlalchemy import create_engine
 import pandas as pd
 from openai import OpenAI
 api_key = "SUA_CHAVE"
-conn = "postgresql://postgres:FBhTTReLdbMiWCFJSMyxFNzwXlpWPGPe@roundhouse.proxy.rlwy.net:26387/railway"
+conn = os.getenv("DATABASE_URL")
 engine = create_engine(conn)
 client = OpenAI(api_key=api_key )
 #%%
